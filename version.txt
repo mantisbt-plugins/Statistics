@@ -1,0 +1,3 @@
+Version: 1.0.0 #
+Devurl: https://github.com/mantisbt-plugins/Statistics/blob/main/version.txt #
+Location: https://github.com/mantisbt-plugins/Statistics/blob/main/version/archive/refs/heads/main.zip #

@@ -1,0 +1,134 @@
+<?php
+# Statistics - a statistics plugin for MantisBT
+#
+
+$s_plugin_Statistics_title                 = 'Statistics';
+$s_plugin_Statistics_description           = 'Mantis Statistik Plugin';
+
+$s_plugin_Statistics_configuration         = 'Statistics: Konfiguration';
+$s_plugin_Statistics_save_config           = 'Konfiguration speichern';
+
+$s_plugin_Statistics_reports               = 'Auswertungen';
+$s_plugin_Statistics_which_report          = 'Welche Berichte zeigen';
+$s_plugin_Statistics_data_tables           = 'Datentabellen';
+$s_plugin_Statistics_nrows_intables        = 'Anzahl an Zeilen in Tabellen';
+$s_plugin_Statistics_runtime               = 'Laufzeit von Berichte';
+$s_plugin_Statistics_runtime_sh            = 'Laufzeit von Berichte anzeigen/verbergen';
+$s_plugin_Statistics_runtime_hide          = 'Verbergen';
+$s_plugin_Statistics_runtime_show          = 'Anzeigen';
+$s_plugin_Statistics_no_limit              = 'Keine Begrenzung';
+
+$s_plugin_Statistics_by_project            = 'Einträge: nach Projekt';
+$s_plugin_Statistics_by_status             = 'Einträge: nach Status';
+$s_plugin_Statistics_by_severity           = 'Einträge: nach Schweregrad';
+$s_plugin_Statistics_by_priority           = 'Einträge: nach Priorität';
+$s_plugin_Statistics_by_category           = 'Einträge: nach Kategorie';
+$s_plugin_Statistics_by_reprod             = 'Einträge: nach Reproduzierung';
+$s_plugin_Statistics_by_resol              = 'Einträge: nach Lösung';
+$s_plugin_Statistics_handler_stats         = 'Einträge: nach Bearbeiter';
+$s_plugin_Statistics_monitoring_stats      = 'Einträge: nach Beobachter';
+$s_plugin_Statistics_notes_stats           = 'Einträge: nach notes';
+$s_plugin_Statistics_tag_stats             = 'Einträge: nach tags';
+$s_plugin_Statistics_by_custom_fields      = 'Einträge: nach benutzerdefiniertem Feld';
+$s_plugin_Statistics_by_reopenings         = 'Einträge: nach re-openings';
+$s_plugin_Statistics_by_attachments        = 'Einträge: nach Dateianhängen';
+$s_plugin_Statistics_by_time_to_resolution = 'Zeit: nach Lösung';
+$s_plugin_Statistics_by_time_in_state      = 'Zeit: im Status';
+$s_plugin_Statistics_by_time_to_first_note = 'Zeit: zur ersten Notiz';
+$s_plugin_Statistics_reporters             = 'Menschen: nach Reporter';
+$s_plugin_Statistics_handlers              = 'Menschen: nach Bearbeiter';
+$s_plugin_Statistics_monitors              = 'Menschen: nach Beobachter';
+$s_plugin_Statistics_people_notes          = 'Menschen: nach Notiz';
+$s_plugin_Statistics_trends_open_res       = 'Trends: Geöffnet vs. erledigt';
+$s_plugin_Statistics_trends_notes          = 'Trends: Notizen';
+
+$s_plugin_Statistics_dt_processing         = 'Bitte warten...';
+$s_plugin_Statistics_dt_info               = '_START_ bis _END_ von _TOTAL_ Einträgen';
+$s_plugin_Statistics_dt_infoEmpty          = '0 bis 0 von 0 Einträgen';
+$s_plugin_Statistics_dt_infoPostFix        = '';
+$s_plugin_Statistics_dt_loadingRecords     = 'Wird geladen...';
+$s_plugin_Statistics_dt_zeroRecords        = 'Keine Einträge vorhanden.';
+$s_plugin_Statistics_dt_emptyTable         = 'Keine Daten in der Tabelle vorhanden';
+$s_plugin_Statistics_dt_first              = 'Erste';
+$s_plugin_Statistics_dt_previous           = 'Zurück';
+$s_plugin_Statistics_dt_next               = 'Nächste';
+$s_plugin_Statistics_dt_last               = 'Letzte';
+$s_plugin_Statistics_dt_sortAscending      = ': aktivieren, um Spalte aufsteigend zu sortieren';
+$s_plugin_Statistics_dt_sortDescending     = ': aktivieren, um Spalte absteigend zu sortieren';
+
+$s_plugin_Statistics_timeframe             = 'Für berichtete Einträge zwischen';
+$s_plugin_Statistics_timeframe_op_re       = 'Für berichtete Einträge/Erledigt zwischen';
+$s_plugin_Statistics_display               = 'Anzeigen';
+$s_plugin_Statistics_project               = 'Projekt';
+$s_plugin_Statistics_project_name          = 'Projektname';
+$s_plugin_Statistics_total                 = 'gesamt';
+$s_plugin_Statistics_open_iss_chrt         = 'Diagramm offener Einträge';
+$s_plugin_Statistics_resolved_iss_chrt     = 'Diagramm erledigter Einträge';
+$s_plugin_Statistics_open_issues           = 'Offene Einträge';
+$s_plugin_Statistics_resolved_issues       = 'Erledigte Einträge';
+$s_plugin_Statistics_priv_proj_skip        = 'Private Projekte können übersprungen werden in Abhängigkeit von Ihren Zugriffsrechten.';
+$s_plugin_Statistics_charts_maxdisp        = 'Diagramm zeigt Top-%1$s Einträge.';
+$s_plugin_Statistics_tables_maxdisp        = 'Tabellen zeigen Top-%1$s -mit total- Einträge. Für Optionen wenden Sie sich an Plugin-Konfiguration.';
+$s_plugin_Statistics_runtime_string        = 'Skript-Laufzeit: %1$s Sekunden.';
+$s_plugin_Statistics_unknown               = 'Unbekannt';
+$s_plugin_Statistics_daily                 = 'Täglich';
+$s_plugin_Statistics_weekly                = 'Wöchentlich';
+$s_plugin_Statistics_monthly               = 'Monatlich';
+$s_plugin_Statistics_yearly                = 'Jährlich';
+
+$s_plugin_Statistics_issue_summary         = 'Eintragszusammenfassung';
+$s_plugin_Statistics_no_of_notes           = 'Anzahl an Notizen';
+$s_plugin_Statistics_no_of_handlers        = 'Anzahl an Bearbeiter';
+$s_plugin_Statistics_summary_table         = 'Zusammenfassung';
+$s_plugin_Statistics_in_open_issues        = 'In offenen Einträge';
+$s_plugin_Statistics_in_resolved_iss       = 'In erledigte Einträge';
+$s_plugin_Statistics_in_all_issues         = 'In erledigten Einträge';
+$s_plugin_Statistics_average_handlers      = 'Durchschnittliche Bearbeiter pro Eintrag';
+$s_plugin_Statistics_never_assto_hnd       = 'Anzahl an Einträgen, die noch nie einem Bearbeiter zugewiesen waren';
+$s_plugin_Statistics_no_of_monitors        = 'Anzahl an Beobachter';
+$s_plugin_Statistics_average_monitors      = 'Durchschnittliche Beobachter pro Eintrag';
+$s_plugin_Statistics_with_no_monitors      = 'Einträge ohne Beobachter';
+$s_plugin_Statistics_average_nt_periss     = 'Durchschnittliche Notizen pro Eintrag';
+$s_plugin_Statistics_no_iss_without_nt     = 'Anzahl an Einträge ohne Notizen';
+$s_plugin_Statistics_by_custom_field       = 'Für benutzerdefiniertes Feld';
+$s_plugin_Statistics_custom_f_error        = 'Kein benutzerdefiniertes Feld in diesem Projekt zu zeigen!';
+$s_plugin_Statistics_novalue               = 'Kein Wert';
+$s_plugin_Statistics_no_of_reopenings      = 'Wiedereröffnung';
+$s_plugin_Statistics_perc_of_reopenings    = 'Prozentsatz der wieder geöffneten Einträge';
+$s_plugin_Statistics_filesize              = 'Dateigröße (KB)';
+
+$s_plugin_Statistics_no_of_attachments     = 'Dateianhänge';
+$s_plugin_Statistics_av_att_per_tkt        = 'Durchschnittliche Anzahl der Dateianhänge in den Einträgen';
+$s_plugin_Statistics_total_no_of_atts      = 'Gesamtzahl der Dateianhänge';
+$s_plugin_Statistics_total_size_attach     = 'Gesamtdateigröße der der Anhänge (KB)';
+$s_plugin_Statistics_reporter_name         = 'Reporter';
+$s_plugin_Statistics_for_ppl_cur_handlers  = 'nur aktuelle Handler';
+$s_plugin_Statistics_for_ppl_all_handlers  = 'alle Handler (re-assignments)';
+$s_plugin_Statistics_for                   = 'Für';
+$s_plugin_Statistics_handler_name          = 'Name des Bearbeiters';
+$s_plugin_Statistics_monitor_name          = 'Name des Beobachters';
+$s_plugin_Statistics_user_name             = 'Benutzername';
+$s_plugin_Statistics_awaiting_for_resol    = 'In Erwartung für die Auflösung';
+$s_plugin_Statistics_time_to_resolution    = 'Zeit bis Lösung';
+$s_plugin_Statistics_in_state              = 'Zeit im Status';
+$s_plugin_Statistics_avg_time_in_state     = 'Durchschnittliche Zeit im Status ';
+$s_plugin_Statistics_inclusive_nonotes     = 'Fügen Sie Einträge ohne Notiz';
+$s_plugin_Statistics_exclusive_nonotes     = 'Ausschließen Einträge ohne Notiz';
+$s_plugin_Statistics_time_to_first_note    = 'Zeit zur ersten Notiz';
+$s_plugin_Statistics_av_time_to_first_note = 'Durchschnittliche Zeit bis zur ersten Notiz';
+$s_plugin_Statistics_granularity           = 'Körnung';
+$s_plugin_Statistics_date                  = 'Datum';
+$s_plugin_Statistics_week_short            = 'W.';
+$s_plugin_Statistics_res_radio_opt1        = '\'Erledigt\' listet Einträge, die zwischen den oben ausgewählten Daten eingemeldet und erledigt wurden';
+$s_plugin_Statistics_res_radio_opt2        = '\'Erledigt\' listet Einträge zwischen den oben ausgewählten Daten ohne Einschränkung auf das Einmeldedatum';
+$s_plugin_Statistics_open_vs_res_chrt      = 'Diagramm offener vs. erledigter Einträge';
+$s_plugin_Statistics_open_vs_res           = 'Geöffnet vs. erledigt';
+$s_plugin_Statistics_notes                 = 'Notizen';
+
+$s_plugin_Statistics_start_date_conf1      = 'Datum Eingangsfilter';
+$s_plugin_Statistics_start_date_conf2      = 'Standard für Startdatum';
+$s_plugin_Statistics_start_date_option1    = 'Heute';
+$s_plugin_Statistics_start_date_option2    = 'Anfang der Woche';
+$s_plugin_Statistics_start_date_option3    = 'Anfang des Monats';
+$s_plugin_Statistics_start_date_option4    = 'Jahresbeginn';
+$s_plugin_Statistics_start_date_option5    = 'Jahresbeginn von MantisBT Daten';

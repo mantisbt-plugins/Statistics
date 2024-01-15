@@ -1,0 +1,178 @@
+#wrapper {
+  position: relative;
+  margin: 25px 10px;
+}
+
+#logo {
+  float: right;
+}
+
+.chartBox {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.space50Before {
+  margin-top: 50px;
+}
+
+.space40Before {
+  margin-top: 40px;
+}
+
+.space30Before {
+  margin-top: 30px;
+}
+
+#scope {
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 3px 0 0 0;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0;
+}
+
+#sup {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+}
+
+.spaceMin10Before {
+  margin-top: -10px;
+}
+
+.space10Before {
+  margin-top: 10px;
+}
+
+.space20Before {
+  margin-top: 20px;
+}
+
+p.foo {
+  color: red;
+}
+
+h3 {
+  color: #C00;
+  padding-bottom: 5px;
+  font: bold 44px "Arian AMU", "Arial AMU", "Arial Unicode", Sylfaen, sans-serif;
+}
+
+.graycolor {
+  color: gray;
+}
+
+td.heading {
+  white-space: nowrap;
+  text-align: right;
+  padding-left: 15px;
+}
+
+.clear {
+  clear:both;
+}
+
+
+/* filter box */
+#filter {
+  margin-top: 35px;
+  width: 550px;
+  padding: 6px 6px 10px 6px;
+  clear: both;
+  background-color: #eeeeee;
+  border: 1px solid #a9a9a9;
+}
+
+#filter div {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+#options {
+  float: right;
+  padding: 2px 10px;
+}
+
+#displaysubmit {
+  text-transform: uppercase;
+  padding: 1px 30px;
+  margin: 10px 0 10px 10px;
+}
+
+#from, #to {
+  padding: 1px 30px;
+  margin: 10px 0 10px 0px;
+}
+
+
+select#funky {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  text-indent: 1px;
+  background-image: url(./plugin_file.php?file=MantisStats/downarrow.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-position: 97% center;
+  background-repeat: no-repeat;
+  border: 1px solid #AAA;
+  font-size: 16px;
+  overflow: hidden;
+  padding: 2px 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 300px;
+}
+
+
+input, select {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#from, #to, #granularity, #customField {
+  width: 150px;
+}
+
+input[type='submit']::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+#filter label.inl {
+  display: table-cell;
+  text-align: justify;
+  padding-right: 38px;
+  padding-left: 5px;
+}
+
+input[type='radio'].resolution_date_options {
+  margin-left: 5px;
+  float: left;
+}
+
+input[type='radio'].padded {
+  margin: 2px 5px 0 0;
+  float: left;
+}
+
+.tblheader {
+  background-color: #adcc80;
+  font-weight: bold;
+}
+
+.grtotal {
+  text-align: right;
+  font-weight: bold;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
