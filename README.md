@@ -1,5 +1,5 @@
 # Statistics
-Version 1.0.0
+Version 1.0.1
 Available for mantis 2.x
 
 The Statistics plugin presents statistical overviews in graphics and/or table lay-out of your Mantis installation.
@@ -15,3 +15,6 @@ Datatables (https://datatables.net/) java script has been updated to latest vers
 Now fully compliant with Mantis 2.26
 
 For issues, request for additional graphs, please visit https://github.com/mantisbt-plugins/Statistic
+
+Version 1.0.0	15-01-2024	Initial release
+Version 1.0.1	17-01-2024	Improved lay-out graphs
