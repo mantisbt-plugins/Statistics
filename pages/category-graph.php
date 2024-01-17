@@ -65,7 +65,8 @@ if ( $total > 0 ) {
 
 
 // Create the Bar Graph.
-$graph = new Graph(400,300, 'auto');
+$graph = new Graph(550,550, 'auto');
+$graph->clearTheme();
 $graph->SetScale('textlin');
 $graph->SetMargin(120,20,50,30);
 $graph->SetShadow();

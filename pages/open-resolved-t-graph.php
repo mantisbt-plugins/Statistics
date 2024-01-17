@@ -21,6 +21,7 @@ $data1y=$open;
 $data2y=$resolved;
 // Create the Bar Graph.
 $graph = new Graph(1600,600, 'auto');
+$graph->clearTheme();
 $graph->SetScale('textlin');
 $graph->SetMargin(60,50,70,50);
 $graph->SetShadow();

@@ -56,7 +56,8 @@ if ( $total > 0 ) {
 }
 
 // Create the Pie Graph.
-$graph = new PieGraph(550,350);
+$graph = new PieGraph(550,550);
+$graph->clearTheme();
 $graph->SetShadow();
 
 // Set A title for the plot
@@ -64,10 +65,11 @@ $graph->title->Set("$title");
 $graph->title->SetFont(FF_FONT1,FS_BOLD);
 
 // Create plots
-$size=0.13;
+$size=0.35;
 $p1 = new PiePlot($data);
 $p1->SetLegends($legend);
 $p1->SetSize($size);
 $p1->value->SetFont(FF_FONT0);
+$p1->ExplodeAll(5);
 $graph->Add($p1);
 $graph->Stroke();
