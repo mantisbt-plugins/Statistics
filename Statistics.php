@@ -9,7 +9,7 @@ class StatisticsPlugin extends MantisPlugin {
 		$this->name         = lang_get( 'plugin_Statistics_title' );
 		$this->description  = lang_get ( 'plugin_Statistics_description' );
 		$this->page         = 'config';
-		$this->version      = '1.0.1';
+		$this->version      = '1.0.2';
 		$this->requires = array( 'MantisCore' => '2.0.0', );
 		$this->author       = 'Cas Nuy';
 		$this->url          =  'https://github.com/mantisbt-plugins/Statistics';
