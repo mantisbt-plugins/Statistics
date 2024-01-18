@@ -13,6 +13,9 @@ UPGRADE
 
 2.Check if database "upgrade" is needed on the "Manage Plugins" page.
   Check plugin configuration page to see if there are new settings or reports.
+MySQL
+in case "only_full_group_by" is enabled on your database, you should disable that to avoid error messages.
+https://stackoverflow.com/questions/23921117/disable-only-full-group-by
 
 PROBLEMS?
 Create support ticket in Github  https://github.com/mantisbt-plugins/Statistics
