@@ -3,7 +3,7 @@
 #
 
 require_once 'statistics_api.php';
-
+$t_show_all = plugin_config_get('show_all');
 layout_page_header();
 layout_page_begin( 'plugin.php?page=Statistics/start_page' );
 

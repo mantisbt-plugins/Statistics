@@ -3,6 +3,9 @@
 #
 
 require_once 'statistics_api.php';
+$t_show_all = plugin_config_get('show_all');
+$t_size 					= plugin_config_get('size');
+$resolved_status_threshold  = config_get( 'bug_resolved_status_threshold' );
 
 layout_page_header();
 layout_page_begin( 'plugin.php?page=Statistics/start_page' );
@@ -25,7 +28,9 @@ if ( config_get( 'show_realname' ) != 'OFF' ) {
 
 $start  = strtotime( cleanDates( 'date-from', $dateFrom ) . " 00:00:00" );
 $end = strtotime( cleanDates( 'date-to', $dateTo ) . " 23:59:59" );
-
+if ( isset ($_REQUEST['size'] ) ) {
+	$t_size= strtoupper ( $_REQUEST['size'] ) ;
+}
 // get data
 $issues_fetch_from_db = array();
 
@@ -141,7 +146,7 @@ function tables ( $type ) {
             <strong><?php echo lang_get( 'plugin_Statistics_timeframe' ); ?></strong>
 
             <form method="get">
-                <input type="hidden" name="page" value="Statistics/issues_by_status" />
+                <input type="hidden" name="page" value="Statistics/people_by_reporters" />
                 <?php echo form_security_field( 'date_picker' ) ?>
 
                 <div>
@@ -151,7 +156,16 @@ function tables ( $type ) {
                         <input type="text" name="date-to" id="to"  value="<?php echo cleanDates('date-to', $dateTo); ?>" />
                     </div>
                 </div>
-                <div>
+               <div>
+				<strong><?php echo plugin_lang_get( 'size' ); ?></strong>
+				</div>
+				<div>
+                    <div>
+                        <input name="size" type="text" size=1 maxlength=1 value="<?php echo $t_size ; ?>" />
+                    </div>
+                </div>
+				<br>   
+ <div>
                     <input type="submit" id="displaysubmit" value=<?php echo lang_get( 'plugin_Statistics_display' ); ?> class="button" />
                 </div>
             </form>
@@ -159,10 +173,15 @@ function tables ( $type ) {
 
 <table>
 <tr>
-
-<td><img src="plugin.php?page=Statistics/reporters-p-graph.php&start=<?php echo $start ?>&end=<?php echo $end ?>&set=0 "></td>
-<td><img src="plugin.php?page=Statistics/reporters-p-graph.php&start=<?php echo $start ?>&end=<?php echo $end ?>&set=1 "></td>
-<td><img src="plugin.php?page=Statistics/reporters-p-graph.php&start=<?php echo $start ?>&end=<?php echo $end ?>&set=2 "></td>
+<?php 
+if ( ON == $t_show_all ) {
+?>
+	<td><img src="plugin.php?page=Statistics/reporters-p-graph.php&start=<?php echo $start ?>&end=<?php echo $end ?>&set=0&size=<?php echo $t_size ?> "></td>
+<?php
+}
+?>
+<td><img src="plugin.php?page=Statistics/reporters-p-graph.php&start=<?php echo $start ?>&end=<?php echo $end ?>&set=1&size=<?php echo $t_size ?> "></td>
+<td><img src="plugin.php?page=Statistics/reporters-p-graph.php&start=<?php echo $start ?>&end=<?php echo $end ?>&set=2&size=<?php echo $t_size ?> "></td>
 </tr>
 </table>
 

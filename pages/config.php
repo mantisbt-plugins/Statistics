@@ -11,6 +11,11 @@ print_manage_menu( 'manage_plugin_page.php' );
 
 require_once 'statistics_api.php';
 
+$f_jpgraph_folder		= plugin_config_get('jpgraph_folder');
+$f_access_threshold 	= plugin_config_get('access_threshold');
+$f_show_all				= plugin_config_get('show_all');
+$f_size					= plugin_config_get('size');
+
 // Which reports to show
 $confWhichReportsToShow = '';
 
@@ -79,8 +84,46 @@ foreach ( $startDateInputFilter_arr as $key => $val ) {
                         <div class="table-responsive">
 
                             <table class="table table-bordered table-condensed table-striped">
-
-                                <tr>
+								<tr>
+									<td class="category">
+										<span class="required">*</span> <?php echo plugin_lang_get('access_threshold') ?>
+									</td>
+									<td>
+										<select name="access_threshold">
+											<?php print_enum_string_option_list('access_levels', $f_access_threshold ) ?>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="category">
+										<span class="required">*</span> <?php echo plugin_lang_get('jpgraph_folder') . ' plugins/Statistics/jpgraph' ; ?>
+									</td>
+									<td>
+										<input type="string" name="jpgraph_folder" class="input-sm" size="50" maxlength="200" required value=<?php echo plugin_config_get('jpgraph_folder') ?> />
+									</td>
+								</tr>
+								<tr>
+									<td class="category">
+										<span class="required">*</span> <?php echo plugin_lang_get('size') ; ?>
+									</td>
+									<td>
+										<input type="string" name="size" class="input-sm" size="1" maxlength="1" required value=<?php echo plugin_config_get('size') ?> />
+									</td>
+								</tr>
+								<tr>
+									<td class="category">
+										<span class="required">*</span> <?php echo plugin_lang_get('show_all') ?>
+									</td>
+									<td>
+										<label><input type="radio" name='show_all' value="1" <?php echo ON == $f_show_all  ? 'checked="checked" ' : ''?>/>
+										<?php echo lang_get( 'Yes' )?></label>
+										<label><input type="radio" name='show_all' value="0" <?php echo OFF == $f_show_all  ? 'checked="checked" ' : ''?>/>
+										<?php echo lang_get( 'No' )?></label>
+									</td>
+								</tr>
+                                
+								
+								<tr>
                                     <th class="category width-40">
                                         <?php echo lang_get( 'plugin_Statistics_reports' ); ?>
                                         <br /><span class="small"><?php echo lang_get( 'plugin_Statistics_which_report'); ?></span>
@@ -123,7 +166,7 @@ foreach ( $startDateInputFilter_arr as $key => $val ) {
                             </table>
                         </div>
                     </div>
-
+					<?php echo plugin_lang_get( 'mysql_warning' ) ?>
                     <div class="widget-toolbox padding-8 clearfix">
                         <input type="submit" class="btn btn-primary btn-white btn-round" value="<?php echo lang_get( 'change_configuration' )?>" />
                     </div>

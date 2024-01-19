@@ -2,12 +2,14 @@
 # Statistics - a statistics plugin for MantisBT
 #
 require_once ('statistics_api.php');
-require_once ('plugins/Statistics/jpgraph/jpgraph.php');
-require_once ('plugins/Statistics/jpgraph/jpgraph_bar.php');
+$f_jpgraph_folder	= plugin_config_get('jpgraph_folder');
+require_once ( $f_jpgraph_folder . 'jpgraph.php' );
+require_once ( $f_jpgraph_folder . 'jpgraph_bar.php' );
 
 $start		=$_GET['start'];
 $end		=$_GET['end'];
 $set		=$_GET['set'];
+$t_size 	= $_GET['size'];
 
 $specific_where		= helper_project_specific_where( $project_id );
 
@@ -56,10 +58,25 @@ if ( $total > 0 ) {
 	$data[] = 1 ;
 	$legend[] =  "NO DATA";
 }
-
-
+switch($t_size){
+	case 'L':
+		$width= 550;
+		$height = 350;
+		break;
+	case 'M':
+		$width= 450;
+		$height = 250;
+		break;
+	case 'S':
+		$width= 350;
+		$height = 150;
+		break;
+	default:
+		$width= 550;
+		$height = 350;
+}
 // Create the Bar Graph.
-$graph = new Graph(550,350, 'auto');
+$graph = new Graph($width,$height, 'auto');
 $graph->clearTheme();
 $graph->SetScale('textlin');
 $graph->Set90AndMargin(120,20,50,30);
@@ -87,4 +104,5 @@ $graph->yaxis->scale->SetGrace(20);
 $p1 = new BarPlot($data);
 $p1->value->SetFont(FF_FONT0);
 $graph->Add($p1);
+//$pl->value->Show();
 $graph->Stroke();

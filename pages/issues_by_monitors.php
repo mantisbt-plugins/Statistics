@@ -242,7 +242,7 @@ $summary_table_print = "
             <strong><?php echo lang_get( 'plugin_Statistics_timeframe' ); ?></strong>
 
             <form method="get">
-                <input type="hidden" name="page" value="Statistics/issues_by_notes" />
+                <input type="hidden" name="page" value="Statistics/issues_by_monitors" />
                 <?php echo form_security_field( 'date_picker' ) ?>
 
                 <div>

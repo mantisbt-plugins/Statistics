@@ -3,13 +3,15 @@
 #
 
 require_once 'statistics_api.php';
+$t_size 					= plugin_config_get('size');
+$resolved_status_threshold  = config_get( 'bug_resolved_status_threshold' );
 
 layout_page_header();
 layout_page_begin( 'plugin.php?page=Statistics/start_page' );
 
 $project_id                 = helper_get_current_project();
 $specific_where             = helper_project_specific_where( $project_id );
-$resolved_status_threshold  = config_get( 'bug_resolved_status_threshold' );
+
 
 // 'resolved' options
 $resolved_options   = array( 1, 2 );
@@ -35,7 +37,9 @@ if ( isset( $_GET['resolution_date_options'] ) and !empty( $_GET['resolution_dat
 
 $start  = strtotime( cleanDates( 'date-from', $dateFrom ) . " 00:00:00" );
 $end = strtotime( cleanDates( 'date-to', $dateTo ) . " 23:59:59" );
-
+if ( isset ($_REQUEST['size'] ) ) {
+	$t_size= strtoupper ( $_REQUEST['size'] ) ;
+}
 // [ daily | weekly | monthly | yearly ] granularities
 if ( $selectedGranularity == 2 ) {          // Weekly
     $date_format    = 'oW';
@@ -244,7 +248,16 @@ $chart_data_print .= "<dataset seriesName='" . htmlspecialchars( lang_get( 'reso
                         <?php echo $granularityOptionsDropDown; ?>
                     </div>
                 </div>
-                <div>
+                               <div>
+				<strong><?php echo plugin_lang_get( 'size' ); ?></strong>
+				</div>
+				<div>
+                    <div>
+                        <input name="size" type="text" size=1 maxlength=1 value="<?php echo $t_size ; ?>" />
+                    </div>
+                </div>
+				<br>  
+				<div>
                     <input type="submit" id="displaysubmit" value=<?php echo lang_get( 'plugin_Statistics_display' ); ?> class="button" />
                 </div>
 
@@ -262,7 +275,7 @@ $chart_data_print .= "<dataset seriesName='" . htmlspecialchars( lang_get( 'reso
 
 <table>
 <tr>
-<td><img src="plugin.php?page=Statistics/open-resolved-t-graph.php&start=<?php echo $start ?>&end=<?php echo $end ?>&dates=<?php echo $graph_date ?>&open=<?php echo $graph_open ?>&resolved=<?php echo $graph_resolved ?> "></td>
+<td><img src="plugin.php?page=Statistics/open-resolved-t-graph.php&start=<?php echo $start ?>&end=<?php echo $end ?>&dates=<?php echo $graph_date ?>&open=<?php echo $graph_open ?>&resolved=<?php echo $graph_resolved ?>&size=<?php echo $t_size ?> "></td>
 <td> <?php echo $chart_data_print ?></td>
 </tr>
 <tr><td align='center'> <p style="color: green"><strong>Opened Issues</strong></p><p style="color: blue"><strong>Resolved Issues</strong></p></td></tr>

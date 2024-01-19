@@ -2,12 +2,15 @@
 # Statistics - a statistics plugin for MantisBT
 #
 require_once ('statistics_api.php');
-require_once ('plugins/Statistics/jpgraph/jpgraph.php');
-require_once ('plugins/Statistics/jpgraph/jpgraph_pie.php');
+$f_jpgraph_folder		= plugin_config_get('jpgraph_folder');
+require_once ( $f_jpgraph_folder . 'jpgraph.php');
+require_once ( $f_jpgraph_folder . 'jpgraph_pie.php');
+
 
 $start		=$_GET['start'];
 $end		=$_GET['end'];
 $set		=$_GET['set'];
+$t_size 	= $_GET['size'];
 
 $specific_where		= helper_project_specific_where( $project_id );
 
@@ -54,9 +57,30 @@ if ( $total > 0 ) {
 	$data[] = 1 ;
 	$legend[] =  "NO DATA";
 }
-
+switch($t_size){
+	case 'L':
+		$width= 550;
+		$height = 550;
+		$size=0.35;
+		break;
+	case 'M':
+		$width= 450;
+		$height = 450;
+		$size=0.25;
+		break;
+	case 'S':
+		$width= 350;
+		$height = 350;
+		$size=0.15;
+		break;
+	default:
+		$width= 550;
+		$height = 550;
+		$size=0.35;
+		break;
+}
 // Create the Pie Graph.
-$graph = new PieGraph(550,550);
+$graph = new PieGraph($width,$height);
 $graph->clearTheme();
 $graph->SetShadow();
 
@@ -65,7 +89,6 @@ $graph->title->Set("$title");
 $graph->title->SetFont(FF_FONT1,FS_BOLD);
 
 // Create plots
-$size=0.35;
 $p1 = new PiePlot($data);
 $p1->SetLegends($legend);
 $p1->SetSize($size);

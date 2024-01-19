@@ -18,6 +18,12 @@ $s_plugin_Statistics_runtime_hide          = 'Masquer';
 $s_plugin_Statistics_runtime_show          = 'Afficher';
 $s_plugin_Statistics_no_limit              = 'Sans limites';
 
+$s_plugin_Statistics_access_threshold		= 'Set access level';
+$s_plugin_Statistics_jpgraph_folder			= 'Set jpgraph folder<br />Default folder is:';
+$s_plugin_Statistics_show_all				= 'Also show Graph of all issues';
+$s_plugin_Statistics_mysql_warning			= 'Ensure MySQL "only_full_group_by" is set to Off. Instructions here: https://stackoverflow.com/questions/23921117/disable-only-full-group-by';
+$s_plugin_Statistics_size					= 'Set size of Graphics (S)mall - (M)edium - (L)arge';
+
 $s_plugin_Statistics_by_project            = 'Bogues: par projet';
 $s_plugin_Statistics_by_status             = 'Bogues: par statut';
 $s_plugin_Statistics_by_severity           = 'Bogues: par sévérité';

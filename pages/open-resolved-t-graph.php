@@ -2,13 +2,14 @@
 # Statistics - a statistics plugin for MantisBT
 #
 require_once ('statistics_api.php');
-require_once ('plugins/Statistics/jpgraph/jpgraph.php');
-require_once ('plugins/Statistics/jpgraph/jpgraph_bar.php');
+$f_jpgraph_folder		= plugin_config_get('jpgraph_folder');
+require_once ( $f_jpgraph_folder . 'jpgraph.php');
+require_once ( $f_jpgraph_folder . 'jpgraph_bar.php');
 
 $dates		= explode( ',',$_GET['dates'] );
 $open		= explode( ',',$_GET['open'] );
 $resolved	= explode( ',',$_GET['resolved'] );
-
+$t_size 	= $_GET['size'];
 
  // We need to load data
 $data = array();
@@ -19,8 +20,32 @@ $legend = $dates;
 
 $data1y=$open;
 $data2y=$resolved;
+
+switch($t_size){
+	case 'L':
+		$width= 1600;
+		$height = 600;
+		$size=0.35;
+		break;
+	case 'M':
+		$width= 1400;
+		$height = 400;
+		$size=0.25;
+		break;
+	case 'S':
+		$width= 1200;
+		$height = 300;
+		$size=0.15;
+		break;
+	default:
+		$width= 1600;
+		$height = 600;
+		$size=0.35;
+		break;
+}
+
 // Create the Bar Graph.
-$graph = new Graph(1600,600, 'auto');
+$graph = new Graph($width,$height);
 $graph->clearTheme();
 $graph->SetScale('textlin');
 $graph->SetMargin(60,50,70,50);

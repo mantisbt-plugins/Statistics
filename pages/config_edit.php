@@ -5,6 +5,15 @@
 auth_reauthenticate();
 access_ensure_global_level( config_get( 'manage_plugin_threshold' ) );
 
+$f_access_threshold  = gpc_get_int( 'access_threshold', [DEVELOPER] );
+$f_show_all = gpc_get_int( 'show_all', ON );
+$f_jpgraph_folder = gpc_get_string( 'jpgraph_folder', 'plugins/Statistics/jpgraph/' );
+$f_size = strtoupper( gpc_get_string( 'size', 'L' ) );
+
+plugin_config_set( 'access_threshold', $f_access_threshold );
+plugin_config_set( 'jpgraph_folder', $f_jpgraph_folder );
+plugin_config_set( 'show_all', $f_show_all );
+plugin_config_set( 'size', $f_size );
 require_once 'statistics_api.php';
 
 if ( FALSE == form_security_validate('config') ) { exit; };
