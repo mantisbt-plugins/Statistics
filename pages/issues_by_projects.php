@@ -23,7 +23,7 @@ $project_names              = project_names();
 $start	= strtotime( cleanDates('date-from', $dateFrom) . " 00:00:00" );
 $end	= strtotime( cleanDates('date-to', $dateTo) . " 23:59:59" );
 if ( isset ($_REQUEST['size'] ) ) {
-	$t_size= strtopper( $_REQUEST['size'] );
+	$t_size= strtoupper( $_REQUEST['size'] );
 }
 // get data
 $issues_fetch_from_db = array();
