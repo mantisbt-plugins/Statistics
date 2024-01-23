@@ -1,4 +1,4 @@
-Version 1.0.3 Available for mantis 2.x
+Version 1.1.0 Available for mantis 2.x
 
 The Statistics plugin presents statistical overviews in graphics and/or table lay-out of your Mantis installation.
 
@@ -14,6 +14,9 @@ Version 1.0.0	15-01-2024	Initial release
 Version 1.0.1	17-01-2024	Improved lay-out graphs 
 Version 1.0.2	18-01-2024	Added missing jpgraph files
 Version 1.0.3	19-01-2024	Made jpgraph folder configurable (thanks to Maximus48p) 
-							made Show All issues configurable
-							Added warning about MySQL "only_full_group_by"
-							Added scaling option for the graphs
+				Made Show All issues configurable
+				Added warning about MySQL "only_full_group_by"
+				Added scaling option for the graphs
+Version 1.1.0	23-01-2024	Added Download options for full data set
+				Fixed some php warnings
+				Improved lay-out
