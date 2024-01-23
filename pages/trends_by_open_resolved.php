@@ -10,7 +10,7 @@ layout_page_header();
 layout_page_begin( 'plugin.php?page=Statistics/start_page' );
 
 $project_id                 = helper_get_current_project();
-$specific_where             = helper_project_specific_where( $project_id );
+$specific_where             = helper_project_specific_where( helper_get_current_project() );
 
 
 // 'resolved' options
@@ -248,7 +248,8 @@ $chart_data_print .= "<dataset seriesName='" . htmlspecialchars( lang_get( 'reso
                         <?php echo $granularityOptionsDropDown; ?>
                     </div>
                 </div>
-                               <div>
+				<p />
+                <div>
 				<strong><?php echo plugin_lang_get( 'size' ); ?></strong>
 				</div>
 				<div>
@@ -268,7 +269,9 @@ $chart_data_print .= "<dataset seriesName='" . htmlspecialchars( lang_get( 'reso
                 <p />
                 <input type="radio" class="resolution_date_options" name="resolution_date_options" id="op2" <?php if ( $resolved_option == 2 ) { echo "checked"; } ?> value="2">
                 <label for="op2" class="inl"><?php echo lang_get( 'plugin_Statistics_res_radio_opt2' ); ?></label>
-
+                       <div>
+ 					&nbsp;&nbsp;&nbsp;<a href="plugin.php?page=Statistics/dl_topenresolved.php&start=<?php echo $start ?>&end=<?php echo $end ?>" class="btn" ><?php echo lang_get( 'plugin_Statistics_download' ); ?></a>
+                </div> 
             </form>
         </div>
 

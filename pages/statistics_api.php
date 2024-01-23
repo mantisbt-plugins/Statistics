@@ -4,8 +4,6 @@
 
 require_once( 'core.php' );
 
-if( !defined( 'MANTIS_VERSION' ) ) { exit(); }
-
 // Session
 function is_session_started() {
     if ( php_sapi_name() !== 'cli' ) {
@@ -96,7 +94,7 @@ function project_names() {
     $project_name_length = 50;
     $project_names = array();
 
-    $query = "SELECT id, name as project_name FROM {project} WHERE " . str_replace( "project_id", "id", $specific_where ) . "  ";
+    $query = "SELECT id, name as project_name FROM {project} WHERE " . str_replace( "project_id", "id", $specific_where ) ."  ";
     $result = db_query( $query );
     foreach ( $result as $row ) {
        $project_names[$row['id']] = string_html_specialchars( substr( $row['project_name'], 0, $project_name_length ) );

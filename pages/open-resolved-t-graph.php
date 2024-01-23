@@ -17,7 +17,7 @@ $legend = array();
 
 
 $legend = $dates;
-
+		$title =  "Trend open versus resolved Issues";
 $data1y=$open;
 $data2y=$resolved;
 
@@ -69,6 +69,7 @@ $graph->xaxis->SetLabelAlign('right','center','right');
 // Add some grace to y-axis so the bars doesn't go
 // all the way to the end of the plot area
 $graph->yaxis->scale->SetGrace(20);
+$graph->yaxis->SetFont(FF_FONT1,FS_BOLD,20);
 
 // Create plots
 $pl1 = new BarPlot($data1y);

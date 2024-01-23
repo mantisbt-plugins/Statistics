@@ -236,6 +236,9 @@ return $data_table_print;
                 <div>
                     <input type="submit" id="displaysubmit" value=<?php echo lang_get( 'plugin_Statistics_display' ); ?> class="button" />
                 </div>
+            <div>
+ 					&nbsp;&nbsp;&nbsp;<a href="plugin.php?page=Statistics/dl_pbhandlers.php&start=<?php echo $start ?>&end=<?php echo $end ?>" class="btn" ><?php echo lang_get( 'plugin_Statistics_download' ); ?></a>
+                </div> 
             </form>
         </div>
 

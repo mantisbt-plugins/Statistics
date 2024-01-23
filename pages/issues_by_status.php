@@ -119,12 +119,15 @@ function tables ( $type ) {
                     <div>
                         <input name="size" type="text" size=1 maxlength=1 value="<?php echo $t_size ; ?>" />
                     </div>
-                </div>
+ </div>
 				<br> 
  <div>
                     <input type="submit" id="displaysubmit" value=<?php echo lang_get( 'plugin_Statistics_display' ); ?> class="button" />
                 </div>
-            </form>
+               <div>
+ 					&nbsp;&nbsp;&nbsp;<a href="plugin.php?page=Statistics/dl_ibstatus.php&start=<?php echo $start ?>&end=<?php echo $end ?>" class="btn" ><?php echo lang_get( 'plugin_Statistics_download' ); ?></a>
+                </div> </div>
+ </form>
         </div>
 
 <table>
@@ -156,7 +159,6 @@ if ( ON == $t_show_all ) {
 <p class="space40Before" />
 <?php if ( $project_id == ALL_PROJECTS ) { echo "<p />&dagger; " . lang_get( 'plugin_Statistics_priv_proj_skip' ) . "<br />"; } ?>
 <strong>&raquo;</strong> <?php printf( lang_get( 'plugin_Statistics_charts_maxdisp' ), MAX_LINES_IN_BAR_CHARTS ); ?>
-<?php if ( $showRuntime == 1 ) { printf( "<p class='graycolor'>" . lang_get( 'plugin_Statistics_runtime_string' ) . "</p>", round(microtime(true) - $starttime, 5) ); } ?>
-</div>
 <?php 
+if ( $showRuntime == 1 ) { printf( "<p class='graycolor'>" . lang_get( 'plugin_Statistics_runtime_string' ) . "</p>", round(microtime(true) - $starttime, 5) ); } 
 layout_page_end();

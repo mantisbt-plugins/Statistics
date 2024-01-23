@@ -11,7 +11,7 @@ $resolved_status_threshold  = config_get( 'bug_resolved_status_threshold' );
 layout_page_header();
 layout_page_begin( 'plugin.php?page=Statistics/start_page' );
 
-$project_id                 = ALL_PROJECTS;
+$project_id                 = helper_get_current_project();
 $specific_where             = helper_project_specific_where( $project_id );
 
 $status_enum_string         = lang_get( 'status_enum_string' );
@@ -28,13 +28,7 @@ if ( isset ($_REQUEST['size'] ) ) {
 // get data
 $issues_fetch_from_db = array();
 
-$query = "SELECT count(*) as the_count, status, project_id
-        FROM {bug}
-        WHERE $specific_where
-        AND date_submitted >= " . $start . "
-        AND date_submitted <= " . $end . "
-        GROUP BY project_id, status
-        ";
+$query = "SELECT count(*) as the_count, status, project_id FROM {bug} WHERE $specific_where AND date_submitted >= " . $start . " AND date_submitted <= " . $end . " GROUP BY project_id, status";
 $result = db_query( $query );
 
 foreach ( $result as $row ) {
@@ -160,6 +154,11 @@ function tables ( $type  ) {
                 <div>
                     <input type="submit" id="displaysubmit" value=<?php echo lang_get( 'plugin_Statistics_display' ); ?> class="button" />
                 </div>
+                <div>
+ 					&nbsp;&nbsp;&nbsp;<a href="plugin.php?page=Statistics/dl_ibproject.php&start=<?php echo $start ?>&end=<?php echo $end ?>" class="btn" ><?php echo lang_get( 'plugin_Statistics_download' ); ?></a>
+
+                </div>
+                </div>
             </form>
         </div>
 
@@ -194,6 +193,6 @@ if ( ON == $t_show_all ) {
 <?php if ( $project_id == ALL_PROJECTS ) { echo "<p />&dagger; " . lang_get( 'plugin_Statistics_priv_proj_skip' ) . "<br />"; } ?>
 <strong>&raquo;</strong> <?php printf( lang_get( 'plugin_Statistics_charts_maxdisp' ), MAX_LINES_IN_BAR_CHARTS ); ?>
 <?php if ( $showRuntime == 1 ) { printf( "<p class='graycolor'>" . lang_get( 'plugin_Statistics_runtime_string' ) . "</p>", round(microtime(true) - $starttime, 5) ); } ?>
-</div>
+
 <?php 
 layout_page_end();

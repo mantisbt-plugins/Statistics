@@ -164,7 +164,10 @@ return $data_table_print;
  <div>
                     <input type="submit" id="displaysubmit" value=<?php echo lang_get( 'plugin_Statistics_display' ); ?> class="button" />
                 </div>
-            </form>
+          <div>
+ 					<a href="plugin.php?page=Statistics/dl_ibtags.php&start=<?php echo $start ?>&end=<?php echo $end ?>" class="btn" ><?php echo lang_get( 'plugin_Statistics_download' ); ?></a>
+                </div>    
+ </form>
         </div>
 
 <table>

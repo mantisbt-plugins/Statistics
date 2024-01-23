@@ -12,7 +12,7 @@ $end		=$_GET['end'];
 $set		=$_GET['set'];
 $t_size 	= $_GET['size'];
 
-$specific_where		= helper_project_specific_where( $project_id );
+$specific_where		= helper_project_specific_where( helper_get_current_project()  );
 
 switch($set){
 	case 0:

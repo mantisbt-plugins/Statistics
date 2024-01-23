@@ -123,7 +123,6 @@ foreach ( $result as $row ) {
             <td class='dt-right' nowrap> " . $extra[$row['id']]['pr'] . "&nbsp;</td>
             <td class='dt-right' nowrap> " . $extra[$row['id']]['sv'] . "&nbsp;</td>
             <td class='dt-right' nowrap>" . number_format( $row['the_count'] ) . "&nbsp;</td>
-            <td>" . $row['id'] . "&nbsp;</td>
         </tr>
         ";
 
@@ -144,7 +143,6 @@ foreach ( $result as $row ) {
             <td class='dt-right' nowrap>" . $extra[$row['id']]['pr'] . "&nbsp;</td>
             <td class='dt-right' nowrap>" . $extra[$row['id']]['sv'] . "&nbsp;</td>
             <td class='dt-right' nowrap>" . number_format( $row['the_count'] ) . "&nbsp;</td>
-            <td>" . $row['id'] . "&nbsp;</td>
         </tr>
         ";
         
@@ -233,7 +231,10 @@ $summary_table_print = "
                 <div>
                     <input type="submit" id="displaysubmit" value=<?php echo lang_get( 'plugin_Statistics_display' ); ?> class="button" />
                 </div>
-            </form>
+           <div>
+ 					<a href="plugin.php?page=Statistics/dl_ibnotes.php&start=<?php echo $start ?>&end=<?php echo $end ?>" class="btn" ><?php echo lang_get( 'plugin_Statistics_download' ); ?></a>
+                </div>    
+ </form>
         </div>
 
 
