@@ -138,3 +138,6 @@ $s_plugin_Statistics_start_date_option2    = 'Начало недели';
 $s_plugin_Statistics_start_date_option3    = 'Начало месяца';
 $s_plugin_Statistics_start_date_option4    = 'Начало года';
 $s_plugin_Statistics_start_date_option5    = 'Начало года данных MantisBT';
+
+$s_plugin_Statistics_yes          = 'Yes';
+$s_plugin_Statistics_no          = 'No';

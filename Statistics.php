@@ -29,7 +29,7 @@ class StatisticsPlugin extends MantisPlugin {
     function hooks() {
         return array(
             'EVENT_MENU_MAIN'           => 'showreport_menu',
-					'EVENT_LAYOUT_RESOURCES'    => 'resources',
+			'EVENT_LAYOUT_RESOURCES'    => 'resources',
         );
     }
 	

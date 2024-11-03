@@ -139,3 +139,6 @@ $s_plugin_Statistics_start_date_option2    = 'Anfang der Woche';
 $s_plugin_Statistics_start_date_option3    = 'Anfang des Monats';
 $s_plugin_Statistics_start_date_option4    = 'Jahresbeginn';
 $s_plugin_Statistics_start_date_option5    = 'Jahresbeginn von MantisBT Daten';
+
+$s_plugin_Statistics_yes          = 'Ja';
+$s_plugin_Statistics_no          = 'Nein';

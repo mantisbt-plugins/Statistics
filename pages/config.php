@@ -116,9 +116,9 @@ foreach ( $startDateInputFilter_arr as $key => $val ) {
 									</td>
 									<td>
 										<label><input type="radio" name='show_all' value="1" <?php echo ON == $f_show_all  ? 'checked="checked" ' : ''?>/>
-										<?php echo lang_get( 'Yes' )?></label>
+										<?php echo plugin_lang_get( 'yes' )?></label>
 										<label><input type="radio" name='show_all' value="0" <?php echo OFF == $f_show_all  ? 'checked="checked" ' : ''?>/>
-										<?php echo lang_get( 'No' )?></label>
+										<?php echo plugin_lang_get( 'no' )?></label>
 									</td>
 								</tr>
                                 
